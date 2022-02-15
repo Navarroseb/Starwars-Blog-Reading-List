@@ -13,11 +13,7 @@ export const Navbar = () => {
 					<img src={starwarslogo} alt="" width="60" height="60" />
 					<img src={darthvader} alt="" width="60" height="60" />
 				</a>
-				<audio controls id="audio2"
-					preload="auto"
-					src="https://mus2.about-in.tk/skm/859c366c-2e5a-494e-aeb7-f20379b4d8bf.mp3"
-					oncanplaythrough="this.play();">
-				</audio>
+					<audio controls src="https://mus2.about-in.tk/skm/859c366c-2e5a-494e-aeb7-f20379b4d8bf.mp3" />
 				<div className="dropdown">
 					<a class="nav-link dropdown-toggle bg-primary text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
 						Favorites

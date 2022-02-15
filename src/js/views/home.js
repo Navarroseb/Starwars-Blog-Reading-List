@@ -8,6 +8,7 @@ export const Home = () => (
 	<div className="text-center bg-dark">
 		
 		<Planetsdetails/>
+		<Charactersdetails/>
 		
 	</div>
 );
