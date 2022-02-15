@@ -1,19 +1,12 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
-		},
+            apiUrl: 'https://www.swapi.tech/api',
+            apiKey: '',
+            photos: null,
+            start_date: '2022-02-01',
+            end_date: '2022-02-14'
+        },
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
