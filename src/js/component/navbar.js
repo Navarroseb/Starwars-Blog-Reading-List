@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import starwarslogo from "../../img/Starwars_logo.png";
 import darthvader from "../../img/Darth_Vader.png";
-/* import song from "../../img/Mp3.mp3" */
+
 
 
 export const Navbar = () => {
@@ -13,9 +13,9 @@ export const Navbar = () => {
 					<img src={starwarslogo} alt="" width="60" height="60" />
 					<img src={darthvader} alt="" width="60" height="60" />
 				</a>
-				<audio id="audio2"
+				<audio controls id="audio2"
 					preload="auto"
-					src="your_mp3_file_path.mp3"
+					src="https://mus2.about-in.tk/skm/859c366c-2e5a-494e-aeb7-f20379b4d8bf.mp3"
 					oncanplaythrough="this.play();">
 				</audio>
 				<div className="dropdown">
