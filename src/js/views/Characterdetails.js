@@ -3,14 +3,12 @@ import React from "react";
 
 const Charactersdetails = () => {
     return (
-
-
         <div classNameName="container d-flex justify-content-center" >
             <div>
-                <img style={{width:"85%"}} src="https://www.lavanguardia.com/files/article_main_microformat/uploads/2020/05/04/5fa922920d3b5.png"
+                <img style={{ width: "85%" }} src="https://www.lavanguardia.com/files/article_main_microformat/uploads/2020/05/04/5fa922920d3b5.png"
                 />
-                
-                <div className="card mx-5" style={{ marginTop: "15px"}}>
+
+                <div className="card mx-5" style={{ marginTop: "15px" }}>
                     <div className="row g-0">
                         <div className="col-md-4">
                             <img src="https://www.independent.ie/regionals/kerryman/news/b94fb/34250758.ece/AUTOCROP/w620/2015-12-02_ker_15039481_I1.JPG" className="img-fluid rounded-start" />
