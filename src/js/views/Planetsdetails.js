@@ -10,7 +10,7 @@ const Planetsdetails = () => {
                 <img style={{ width: "100%" }} src="https://files.muzli.space/7d75e2ae67729c0fd54822d657967dae.jpeg"
                 />
 
-                <div className="card mb-3" style={{ maxwidth:"540px"}} style={{ marginTop: "15px"}}>
+                <div className="card mb-3" style={{ maxwidth:"540px", }} margintop={"15px"}>
                     <div className="row g-0">
                         <div className="col-md-4">
                             <img src="https://pm1.narvii.com/6361/c338000011dddc976bc1e960bf83c6a04402b720_hq.jpg" className="img-fluid rounded-start" />
