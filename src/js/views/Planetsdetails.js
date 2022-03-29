@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const Planetsdetails = () => {
+export const Planetsdetails = () => {
     return (
 
 
@@ -52,4 +52,3 @@ const Planetsdetails = () => {
 };
 
 
-export default Planetsdetails;

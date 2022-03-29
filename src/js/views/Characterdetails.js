@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const Charactersdetails = () => {
+export const Charactersdetails = () => {
     return (
         <div classNameName="container d-flex justify-content-center" >
             <div>
@@ -46,4 +46,3 @@ const Charactersdetails = () => {
 };
 
 
-export default Charactersdetails;
