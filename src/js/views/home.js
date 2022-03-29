@@ -12,7 +12,7 @@ export const Home = () => {
 			
 					<img
 						className="d-block w-100"
-						src="https://www.xtrafondos.com/descargar.php?id=3646&resolucion=2560x1440g"
+						src="https://www.pngmart.com/files/12/Star-Wars-Darth-Vader-PNG-Transparent-Image.png"
 						alt="homeimg"
 					/>
 				
