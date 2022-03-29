@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Badge, Dropdown } from "react-bootstrap";
 import starwarslogo from "../../img/starwarslogo.png";
 
 
@@ -12,7 +13,7 @@ export const Navbar = () => {
 				<a className="navbar-brand" href="/">
 					<img src={starwarslogo} alt="" width="90" height="70" />
 				</a>
-				<div class="collapse navbar-collapse" id="navbarNav">
+				<div className="collapse navbar-collapse" id="navbarNav">
 					<ul className="navbar-nav m-auto">
 						<li className="nav-item">
 							<Link to="/" className="nav-link active text-secondary" >
@@ -30,7 +31,7 @@ export const Navbar = () => {
 							</Link>
 						</li>
 					</ul>
-					</div>
+
 
 					{/* <Dropdown className="ms-3">
 						<Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
@@ -45,14 +46,15 @@ export const Navbar = () => {
 								</Dropdown.Item>
 							))}
 						</Dropdown.Menu>
-					</Dropdown> */}
-				<div className="dropdown">
+					</Dropdown> */} 
+					<div className="dropdown">
 					<a className="nav-link dropdown-toggle bg-primary text-white bg-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
 						Favorites
 					</a>
 					<ul className="dropdown-menu text-secondary" aria-labelledby="navbarDropdown">
 						<li><a className="dropdown-item" href="#">Favorites</a></li>
 					</ul>
+				</div> 
 				</div>
 			</div>
 		</nav>
