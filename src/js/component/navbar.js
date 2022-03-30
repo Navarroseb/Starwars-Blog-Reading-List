@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import { Badge, Dropdown } from "react-bootstrap";
 import starwarslogo from "../../img/starwarslogo.png";
 
-
-
-
 export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-lg bg-light">
