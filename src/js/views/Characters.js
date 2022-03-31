@@ -1,7 +1,7 @@
 import React from "react";
 import { Charactersdetails } from "./Characterdetails";
 import "../../styles/home.css";
-import Charactersimg from "../../img/Charactersimg.jpg";
+import Charactersbg from "../../img/Charactersbg";
 
 export const Characters = (props) => {
     return (
@@ -12,7 +12,7 @@ export const Characters = (props) => {
             <div className="scrollmenu mx-auto">
                 <div className="row flex-row flex-nowrap">
                     <div className="card md-3 g-4">
-                        <img src={Charactersimg} className="card-img-top" alt="..." />
+                        <img src={Charactersbg} className="card-img-top" alt="..." />
                         <div className="card-body">
                             <h5 className={props}>
                                 <p>gender:</p>
