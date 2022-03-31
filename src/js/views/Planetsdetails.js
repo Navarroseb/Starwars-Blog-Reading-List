@@ -8,7 +8,7 @@ export const Planetsdetails = () => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	useEffect(() => {
-		actions.getPlanets(params.id);
+		actions.getPlanetsdetails(params.id);
 	}, []);
 	if (store.planetsdetails) {
 		return (

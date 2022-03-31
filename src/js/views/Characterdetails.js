@@ -8,7 +8,7 @@ export const Charactersdetails = () => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	useEffect(() => {
-		actions.getCharacters(params.id);
+		actions.getCharactersdetails(params.id);
 	}, []);
 	if (store.charactersdetails) {
 		return (

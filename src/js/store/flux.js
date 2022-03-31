@@ -1,35 +1,60 @@
+import { getCharacters, getCharactersdetails, getPlanets, getPlanetsdetails} from "../api/api-starwar";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-            apiUrl: 'https://www.swapi.tech/api',
-            apiKey: '',
-            photos: null,
-            start_date: '2022-02-01',
-            end_date: '2022-02-14'
-        },
+			characters: [],
+			charactersdetails: undefined,
+			planets: [],
+			planetsdetails: undefined,
+			favoritos: []
+		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			getCharacters: () => {
+				getCharacters()
+					.then(value => {
+						setStore({ characters: value });
+					})
+					.catch(error => {
+						setStore({ characters: undefined });
+					});
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+			getCharactersdetails: id => {
+				getCharactersdetails(id)
+					.then(value => {
+						setStore({ charactersdetails: value });
+					})
+					.catch(error => {
+						setStore({ charactersdetails: {} });
+					});
 			},
-			changeColor: (index, color) => {
-				//get the store
+			getPlanets: () => {
+				getPlanets()
+					.then(value => {
+						setStore({ planets: value });
+					})
+					.catch(error => {
+						setStore({ planets: undefined });
+					});
+			},
+			getPlanetsdetails: id => {
+				getPlanetsdetails(id)
+					.then(value => {
+						setStore({ planetsdetails: value });
+					})
+					.catch(error => {
+						setStore({ planetsdetails: {} });
+					});
+			},
+			
+			addfavoritos: dato => {
 				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
+				setStore({ favoritos: [...store.favoritos, dato] });
+				console.log(store.favoritos);
+			},
+			deletefavoritos: index => {
+				const store = getStore();
+				store.favoritos.splice(index, 1);
+				setStore({ favoritos: [...store.favoritos] });
 			}
 		}
 	};
