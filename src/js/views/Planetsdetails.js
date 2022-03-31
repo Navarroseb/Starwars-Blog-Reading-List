@@ -1,54 +1,71 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
+import Charactersimg from "../../img/Charactersimg.jpg";
 
 
 export const Planetsdetails = () => {
-    return (
-
-
-        <div className="container d-flex justify-content-center">
-            <div>
-                <img style={{ width: "100%" }} src="https://files.muzli.space/7d75e2ae67729c0fd54822d657967dae.jpeg"
-                />
-
-                <div className="card mb-3" style={{ maxwidth:"540px", }} margintop={"15px"}>
-                    <div className="row g-0">
-                        <div className="col-md-4">
-                            <img src="https://pm1.narvii.com/6361/c338000011dddc976bc1e960bf83c6a04402b720_hq.jpg" className="img-fluid rounded-start" />
-                        </div>
-                        <div className="col-md-8">
-                            <div className="card-body">
-                                <h5 className="card-title">Nombre del planeta</h5>
-                                <ul className="list-group">
-                                    <li className="list-group-item">
-                                        Características del planeta
-                                    </li>
-                                    <li className="list-group-item">
-                                        Características del planeta
-                                    </li>
-                                    <li className="list-group-item">
-                                        Características del planeta
-                                    </li>
-                                    <li className="list-group-item">
-                                        Características del planeta
-                                    </li>
-                                    <li className="list-group-item">
-                                        Características del planeta
-                                    </li>
-                                    <li className="list-group-item">
-                                        Características del planeta
-                                    </li>
-                                    <li className="list-group-item">
-                                        Características del planeta
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    )
+	const { store, actions } = useContext(Context);
+	const params = useParams();
+	useEffect(() => {
+		actions.getPlanets(params.id);
+	}, []);
+	if (store.planetsdetails) {
+		return (
+			<div className="container contenedor">
+				<div className="card m-2 bg-dark" style={{ width: "30rem" }}>
+					<img
+						src={Charactersimg}
+						className="card-img-top"
+					/>
+					<div className="card-body">
+						<h1 className="card-title">{store.planetsdetails.properties.name}</h1>{" "}
+						<p>
+							<strong>description:</strong> {store.planetsdetails.description}
+						</p>
+						<p>
+							<strong>birth_year:</strong> {store.planetsdetails.properties.birth_year}
+						</p>
+						<p>
+							<strong>height:</strong> {store.planetsdetails.properties.height}
+						</p>
+						<p>
+							<strong>mass:</strong> {store.planetsdetails.properties.mass}
+						</p>
+						<p>
+							<strong>hair_color:</strong> {store.planetsdetails.properties.hair_color}
+						</p>
+						<p>
+							<strong>skin_color:</strong> {store.planetsdetails.properties.skin_color}
+						</p>
+						<p>
+							<strong>eye_color:</strong> {store.planetsdetails.properties.eye_color}
+						</p>
+						<p>
+							<strong>gender:</strong> {store.planetsdetails.properties.gender}
+						</p>
+						<p>
+							<strong>created:</strong> {store.planetsdetails.properties.created}
+						</p>
+						<p>
+							<strong>edited:</strong> {store.planetsdetails.properties.edited}
+						</p>
+						<p>
+							<strong>homeworld:</strong> {store.planetsdetails.properties.homeworld}
+						</p>
+						<p>
+							<strong>url:</strong> {store.planetsdetails.properties.url}
+						</p>
+						<div className="div-btn">
+							<Link className="btn btn-dark boton" to={"/Planets"}>
+								Back
+							</Link>
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	} else {
+		return <div>Cargando datos...</div>;
+	}
 };
-
-

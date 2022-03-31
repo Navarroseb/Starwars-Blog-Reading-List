@@ -1,48 +1,71 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
+import Charactersimg from "../../img/Charactersimg.jpg";
 
 
 export const Charactersdetails = () => {
-    return (
-        <div classNameName="container d-flex justify-content-center" >
-            <div>
-                <img style={{ width: "85%" }} src="https://www.lavanguardia.com/files/article_main_microformat/uploads/2020/05/04/5fa922920d3b5.png"
-                />
-
-                <div className="card mx-5" style={{ marginTop: "15px" }}>
-                    <div className="row g-0">
-                        <div className="col-md-4">
-                            <img src="https://www.independent.ie/regionals/kerryman/news/b94fb/34250758.ece/AUTOCROP/w620/2015-12-02_ker_15039481_I1.JPG" className="img-fluid rounded-start" />
-                        </div>
-                        <div className="col-md-8">
-                            <div className="card-body">
-                                <h5 className="card-title">Nombre del personaje</h5>
-                                <ul className="list-group">
-                                    <li className="list-group-item">
-                                        Características del personaje
-                                    </li>
-                                    <li className="list-group-item">
-                                        Características del personaje
-                                    </li>
-                                    <li className="list-group-item">
-                                        Características del personaje
-                                    </li>
-                                    <li className="list-group-item">
-                                        Características del personaje
-                                    </li>
-                                    <li className="list-group-item">
-                                        Características del personaje
-                                    </li>
-                                    <li className="list-group-item">
-                                        Características del personaje
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
+	const { store, actions } = useContext(Context);
+	const params = useParams();
+	useEffect(() => {
+		actions.getCharacters(params.id);
+	}, []);
+	if (store.charactersdetails) {
+		return (
+			<div className="container contenedor">
+				<div className="card m-2 bg-dark" style={{ width: "30rem" }}>
+					<img
+						src={Charactersimg}
+						className="card-img-top"
+					/>
+					<div className="card-body">
+						<h1 className="card-title">{store.charactersdetails.properties.name}</h1>{" "}
+						<p>
+							<strong>description:</strong> {store.charactersdetails.description}
+						</p>
+						<p>
+							<strong>birth_year:</strong> {store.charactersdetails.properties.birth_year}
+						</p>
+						<p>
+							<strong>height:</strong> {store.charactersdetails.properties.height}
+						</p>
+						<p>
+							<strong>mass:</strong> {store.charactersdetails.properties.mass}
+						</p>
+						<p>
+							<strong>hair_color:</strong> {store.charactersdetails.properties.hair_color}
+						</p>
+						<p>
+							<strong>skin_color:</strong> {store.charactersdetails.properties.skin_color}
+						</p>
+						<p>
+							<strong>eye_color:</strong> {store.charactersdetails.properties.eye_color}
+						</p>
+						<p>
+							<strong>gender:</strong> {store.charactersdetails.properties.gender}
+						</p>
+						<p>
+							<strong>created:</strong> {store.charactersdetails.properties.created}
+						</p>
+						<p>
+							<strong>edited:</strong> {store.charactersdetails.properties.edited}
+						</p>
+						<p>
+							<strong>homeworld:</strong> {store.charactersdetails.properties.homeworld}
+						</p>
+						<p>
+							<strong>url:</strong> {store.charactersdetails.properties.url}
+						</p>
+						<div className="div-btn">
+							<Link className="btn btn-dark boton" to={"/Characters"}>
+								Back
+							</Link>
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	} else {
+		return <div>Cargando datos...</div>;
+	}
 };
-
-
