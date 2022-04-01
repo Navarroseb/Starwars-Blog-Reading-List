@@ -1,4 +1,4 @@
-import { getCharacters, getCharactersdetails, getPlanets, getPlanetsdetails} from "../api/api-starwar";
+import { getCharacters, getCharactersdetails, getPlanets, getPlanetsdetails} from "../api/api";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {

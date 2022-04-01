@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import Charactersimg from "../../img/Charactersimg.jpg";
+import "../../styles/Charactersdetails.css";
 
 
 export const Charactersdetails = () => {
@@ -56,7 +57,7 @@ export const Charactersdetails = () => {
 						<p>
 							<strong>url:</strong> {store.charactersdetails.properties.url}
 						</p>
-						<div className="div-btn">
+						<div className="boton">
 							<Link className="btn btn-dark boton" to={"/Characters"}>
 								Back
 							</Link>
@@ -66,6 +67,6 @@ export const Charactersdetails = () => {
 			</div>
 		);
 	} else {
-		return <div>Cargando datos...</div>;
+		return <div>Not Found!</div>;
 	}
 };

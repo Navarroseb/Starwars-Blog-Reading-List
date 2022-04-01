@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
+import "../../styles/Characters.css";
 import Charactersbg from "../../img/Charactersbg.jpg";
 import Charactersimg from "../../img/Charactersimg.jpg";
 
@@ -15,18 +16,18 @@ export const Characters = () => {
         <>
             <img src={Charactersbg} className="card-img-top" alt="..." />
             <div className="container">
-                <div className="scrollmenu mx-auto">
-                    <div className="row flex-row flex-nowrap">
-                        {store.Characters.map((value, index) => (
-                        <div key={index} className="card m-2 g-4" style={{ width: "20rem", height: "45rem" }}>
+                <div className="...">
+                    <div className="row flex-row">
+                        {store.characters.map((value, index) => (
+                        <div key={index} className="card m-2 g-4 bg-secondary border border-danger" style={{ width: "20rem" }}>
                             <img src={Charactersimg} className="card-img-top" alt="..." />
                             <div className="card-body">
-                                <p className="card-text">{value.name}</p>
+                                <p className="card-text text-white">{value.name}</p>
                                 <div className="card-boton">
-                                    <Link className="btn-boton" to={"Charactersdetails/" + value.uid}>
+                                    <Link className="btn-boton" to={"Charactersdetails/" + value.id}>
                                         Learn more!
                                     </Link>
-                                    <button type="button" className="btnfav" onClick={()=> actions.addfavoritos(value.name)}>
+                                    <button type="button" className="btnfav border border-danger" onClick={()=> actions.addfavoritos(value.name)}>
                                         <i className="far fa-heart" />
                                     </button>
                                 </div>
