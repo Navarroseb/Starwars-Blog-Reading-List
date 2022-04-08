@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Badge, Dropdown } from "react-bootstrap";
 import starwarslogo from "../../img/starwarslogo.png";
 
 export const Navbar = () => {

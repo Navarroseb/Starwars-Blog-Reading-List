@@ -1,6 +1,5 @@
 .footer {
     height: 12rem;
-  /*   background-color: black; */
     display: inline;
     align-items: center;
   }
@@ -13,7 +12,7 @@
     display: flex;
     justify-content: center;
     font-size: 1.2rem;
-  /*   color: rgb(51, 168, 184); */
+  
   }
 
   a {
@@ -22,7 +21,7 @@
   }
   
   .slogan {
-   /*  color: rgb(51, 168, 184); */
+   
     font-size: 1.2rem;
     display: flex;
     justify-content: center;
@@ -31,7 +30,6 @@
   }
   .fa-jedi-order  {
     margin: 0 0.3rem 0 0.3rem;
-/*     color: rgb(51, 168, 184); */
     text-align: center;
   }
   .span{
