@@ -1,12 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
-import { Context } from "../store/appContext";
-import homeimg from "../../img/homeimg.jpg";
+import React from "react";
+
 
 
 export const Home = () => {
-	const { store, actions } = useContext(Context);
-	useEffect(() => {}, []);
 	return (
 		<div className="container p-5">
 			

@@ -3,14 +3,10 @@
     overflow-y: scroll;
     background-repeat: no-repeat;
     background-size: cover;
-    position: fixed;
+    
 }
 
 .navbar{
     background-color: transparent !important;
 }
-#audio{
-    background-color: transparent;
-    opacity: 0.3;
-    justify-items: center;
-}
+
