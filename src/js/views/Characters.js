@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/home.css";
 import "../../styles/Characters.css";
 import Charactersbg from "../../img/Charactersbg.jpg";
 import Charactersimg from "../../img/Charactersimg.jpg";
