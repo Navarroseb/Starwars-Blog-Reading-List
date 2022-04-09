@@ -20,7 +20,7 @@ export const Characters = (props) => {
                             </h5>
                             <p className={props}>Name: </p>
                             <div className="botones-card">
-                                <a href="/Characterdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
+                                <a href="/Charactersdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
                                 <a href="/favoritos" className="btn btn-border border-warning ms-2"><i className="far fa-heart"></i></a>
                             </div>
                         </div>
@@ -33,7 +33,7 @@ export const Characters = (props) => {
                             </h5>
                             <p className={props}>Name: </p>
                             <div className="botones-card">
-                                <a href="/Characterdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
+                                <a href="/Charactersdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
                                 <a href="/favoritos" className="btn btn-border border-warning ms-2"><i className="far fa-heart"></i></a>
                             </div>
                         </div>
@@ -46,7 +46,7 @@ export const Characters = (props) => {
                             </h5>
                             <p className={props}>Name: </p>
                             <div className="botones-card">
-                                <a href="/Characterdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
+                                <a href="/Charactersdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
                                 <a href="/favoritos" className="btn btn-border border-warning ms-2"><i className="far fa-heart"></i></a>
                             </div>
                         </div>
@@ -59,7 +59,7 @@ export const Characters = (props) => {
                             </h5>
                             <p className={props}>Name: </p>
                             <div className="botones-card">
-                                <a href="/Characterdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
+                                <a href="/Charactersdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
                                 <a href="/favoritos" className="btn btn-border border-warning ms-2"><i className="far fa-heart"></i></a>
                             </div>
                         </div>
@@ -72,7 +72,7 @@ export const Characters = (props) => {
                             </h5>
                             <p className={props}>Name: </p>
                             <div className="botones-card">
-                                <a href="/Characterdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
+                                <a href="/Charactersdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
                                 <a href="/favoritos" className="btn btn-border border-warning ms-2"><i className="far fa-heart"></i></a>
                             </div>
                         </div>
@@ -85,7 +85,7 @@ export const Characters = (props) => {
                             </h5>
                             <p className={props}>Name: </p>
                             <div className="botones-card">
-                                <a href="/Characterdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
+                                <a href="/Charactersdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
                                 <a href="/favoritos" className="btn btn-border border-warning ms-2"><i className="far fa-heart"></i></a>
                             </div>
                         </div>

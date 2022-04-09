@@ -1,62 +1,56 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
-import { Context } from "../store/appContext";
-import Charactersimg from "../../img/Charactersimg.jpg";
+import React from "react";
+import { Link } from "react-router-dom";
+import Planetimg from "../../img/Planetimg.jpg";
+import "../../styles/Planetsdetails.css"
 
 
 export const Planetsdetails = () => {
-	const { store, actions } = useContext(Context);
-	const params = useParams();
-	useEffect(() => {
-		actions.getPlanetsdetails(params.id);
-	}, []);
-	if (store.planetsdetails) {
-		return (
+	return (
 			<div className="container contenedor">
 				<div className="card m-2 bg-dark" style={{ width: "30rem" }}>
 					<img
-						src={Charactersimg}
+						src={Planetimg}
 						className="card-img-top"
 					/>
 					<div className="card-body">
-						<h1 className="card-title">{store.planetsdetails.properties.name}</h1>{" "}
+						<h1 className="card-title"></h1>{" "}
 						<p>
-							<strong>description:</strong> {store.planetsdetails.description}
+							<strong>description:</strong>
 						</p>
 						<p>
-							<strong>birth_year:</strong> {store.planetsdetails.properties.birth_year}
+							<strong>birth_year:</strong> 
 						</p>
 						<p>
-							<strong>height:</strong> {store.planetsdetails.properties.height}
+							<strong>height:</strong>
 						</p>
 						<p>
-							<strong>mass:</strong> {store.planetsdetails.properties.mass}
+							<strong>mass:</strong> 
 						</p>
 						<p>
-							<strong>hair_color:</strong> {store.planetsdetails.properties.hair_color}
+							<strong>hair_color:</strong>
 						</p>
 						<p>
-							<strong>skin_color:</strong> {store.planetsdetails.properties.skin_color}
+							<strong>skin_color:</strong>
 						</p>
 						<p>
-							<strong>eye_color:</strong> {store.planetsdetails.properties.eye_color}
+							<strong>eye_color:</strong>
 						</p>
 						<p>
-							<strong>gender:</strong> {store.planetsdetails.properties.gender}
+							<strong>gender:</strong> 
 						</p>
 						<p>
-							<strong>created:</strong> {store.planetsdetails.properties.created}
+							<strong>created:</strong>
 						</p>
 						<p>
-							<strong>edited:</strong> {store.planetsdetails.properties.edited}
+							<strong>edited:</strong> 
 						</p>
 						<p>
-							<strong>homeworld:</strong> {store.planetsdetails.properties.homeworld}
+							<strong>homeworld:</strong> 
 						</p>
 						<p>
-							<strong>url:</strong> {store.planetsdetails.properties.url}
+							<strong>url:</strong>
 						</p>
-						<div className="div-btn">
+						<div className="boton">
 							<Link className="btn btn-dark boton" to={"/Planets"}>
 								Back
 							</Link>
@@ -65,7 +59,5 @@ export const Planetsdetails = () => {
 				</div>
 			</div>
 		);
-	} else {
-		return <div>Cargando datos...</div>;
-	}
+	
 };

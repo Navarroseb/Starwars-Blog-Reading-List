@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
-import { Context } from "../store/appContext";
+import React from "react";
+import { Link } from "react-router-dom";
 import Charactersimg from "../../img/Charactersimg.jpg";
 import "../../styles/Charactersdetails.css";
 
