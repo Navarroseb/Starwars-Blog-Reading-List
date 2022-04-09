@@ -1,5 +1,5 @@
 import { getCharacters, getCharactersdetails, getPlanets, getPlanetsdetails} from "../api/api";
-const getState = ({ getStore, getActions, setStore }) => {
+const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
 			characters: [],

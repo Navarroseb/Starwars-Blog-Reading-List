@@ -12,7 +12,7 @@ export const getCharacters = async () => {
 };
 export const getCharactersdetails = async id => {
 	try {
-		return fetch(`https://www.swapi.tech/api/Characterdetails/${id}`, {
+		return fetch(`https://www.swapi.tech/api/Charactersdetails/${id}`, {
 			method: "GET",
 			redirect: "follow"
 		})
