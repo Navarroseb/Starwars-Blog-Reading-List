@@ -3,7 +3,8 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
-.card-boton{
+.botones-card{
     display: flex;
     justify-content: space-between;
+    margin-top: 30%;
 }

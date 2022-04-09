@@ -6,12 +6,6 @@ import "../../styles/Charactersdetails.css";
 
 
 export const Charactersdetails = () => {
-	const { store, actions } = useContext(Context);
-	const params = useParams();
-	useEffect(() => {
-		actions.getCharactersdetails(params.id);
-	}, []);
-	if (store.charactersdetails) {
 		return (
 			<div className="container contenedor">
 				<div className="card m-2 bg-dark" style={{ width: "30rem" }}>
@@ -20,42 +14,42 @@ export const Charactersdetails = () => {
 						className="card-img-top"
 					/>
 					<div className="card-body">
-						<h1 className="card-title">{store.charactersdetails.properties.name}</h1>{" "}
+						<h1 className="card-title"></h1>{" "}
 						<p>
-							<strong>description:</strong> {store.charactersdetails.description}
+							<strong>description:</strong>
 						</p>
 						<p>
-							<strong>birth_year:</strong> {store.charactersdetails.properties.birth_year}
+							<strong>birth_year:</strong>
 						</p>
 						<p>
-							<strong>height:</strong> {store.charactersdetails.properties.height}
+							<strong>height:</strong> 
 						</p>
 						<p>
-							<strong>mass:</strong> {store.charactersdetails.properties.mass}
+							<strong>mass:</strong>
 						</p>
 						<p>
-							<strong>hair_color:</strong> {store.charactersdetails.properties.hair_color}
+							<strong>hair_color:</strong>
 						</p>
 						<p>
-							<strong>skin_color:</strong> {store.charactersdetails.properties.skin_color}
+							<strong>skin_color:</strong>
 						</p>
 						<p>
-							<strong>eye_color:</strong> {store.charactersdetails.properties.eye_color}
+							<strong>eye_color:</strong>
 						</p>
 						<p>
-							<strong>gender:</strong> {store.charactersdetails.properties.gender}
+							<strong>gender:</strong>
 						</p>
 						<p>
-							<strong>created:</strong> {store.charactersdetails.properties.created}
+							<strong>created:</strong>
 						</p>
 						<p>
-							<strong>edited:</strong> {store.charactersdetails.properties.edited}
+							<strong>edited:</strong>
 						</p>
 						<p>
-							<strong>homeworld:</strong> {store.charactersdetails.properties.homeworld}
+							<strong>homeworld:</strong>
 						</p>
 						<p>
-							<strong>url:</strong> {store.charactersdetails.properties.url}
+							<strong>url:</strong>
 						</p>
 						<div className="boton">
 							<Link className="btn btn-dark boton" to={"/Characters"}>
@@ -66,7 +60,4 @@ export const Charactersdetails = () => {
 				</div>
 			</div>
 		);
-	} else {
-		return <div>Not Found!</div>;
-	}
-};
+	};
