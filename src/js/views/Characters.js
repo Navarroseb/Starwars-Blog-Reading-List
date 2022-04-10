@@ -12,27 +12,27 @@ export const Characters = () => {
         actions.getCharacters();
     }, []);
     return (
-        <>
-            <img src={Charactersbg} className="card-img-top" alt="..." />
+        <div className="contenedor">
+            <img src={Charactersbg} className="card-img-top" alt="bg" />
             <div className="container">
-                {store.characters.map((value, index) => (
-                    <div key={index} className="row flex-row">
-                        <div className="card m-2 g-4" style={{ width: "20rem", height: "45rem" }}>
-                            <img src={Charactersimg} className="card-img-top" alt="..." />
+                {store.characters.map((value, i) => (
+                    <div key={i} className="card m-2 g-4 row flex-row" style={{ width: "20rem", height: "45rem" }}>
+                            <img src={Charactersimg} className="card-img-top" alt="perfil" />
                             <div className="card-body">
-                                <p className={props}>Name: {value.name}</p>
-                                <div className="botones-card">
-                                    <Link>
-                                        <a href={"Charactersdetails/" + value.id} className="btn btn-border border-primary ms-2">Learn More!</a>
+                                <p className="text-card">Name: {value.name}</p>
+                                <div className="cardbuttons">
+                                    <Link className="btn btn-border border-primary ms-2" to={"charactersdetails/" + value.uid}>
+                                        Learn More!
                                     </Link>
-                                    <a href="/favoritos" className="btn btn-border border-warning ms-2" onClick={() => actions.addFavoritos(value.name)}><i className="far fa-heart"></i></a>
+                                    <button type="button" className="btn btn-border border-warning ms-2" onClick={() => actions.addFavoritos(value.name)}>
+                                    <i className="far fa-heart"></i>
+                                    </button>                             
                                 </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
             </div>
-        </>
+        </div>
     )
 }
 

@@ -1,4 +1,4 @@
-import { getCharacters, getCharactersdetails, getPlanets, getPlanetsdetails} from "../api/api";
+import { getCharacter, getCharactersdetail, getPlanet, getPlanetsdetail} from "../api/api";
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
@@ -10,7 +10,7 @@ const getState = ({ getStore, setStore }) => {
 		},
 		actions: {
 			getCharacters: () => {
-				getCharacters()
+				getCharacter()
 					.then(value => {
 						setStore({ characters: value });
 					})
@@ -19,7 +19,7 @@ const getState = ({ getStore, setStore }) => {
 					});
 			},
 			getCharactersdetails: id => {
-				getCharactersdetails(id)
+				getCharactersdetail(id)
 					.then(value => {
 						setStore({ charactersdetails: value });
 					})
@@ -28,7 +28,7 @@ const getState = ({ getStore, setStore }) => {
 					});
 			},
 			getPlanets: () => {
-				getPlanets()
+				getPlanet()
 					.then(value => {
 						setStore({ planets: value });
 					})
@@ -37,7 +37,7 @@ const getState = ({ getStore, setStore }) => {
 					});
 			},
 			getPlanetsdetails: id => {
-				getPlanetsdetails(id)
+				getPlanetsdetail(id)
 					.then(value => {
 						setStore({ planetsdetails: value });
 					})

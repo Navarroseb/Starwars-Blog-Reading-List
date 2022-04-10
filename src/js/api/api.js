@@ -1,6 +1,6 @@
-export const getCharacters = async () => {
+export const getCharacter = async () => {
 	try {
-		return fetch("https://www.swapi.tech/api/Characters?page=1&limit=100", {
+		return fetch("https://www.swapi.tech/api/people?page=1&limit=100", {
 			method: "GET",
 			redirect: "follow"
 		})
@@ -10,9 +10,9 @@ export const getCharacters = async () => {
 		return [];
 	}
 };
-export const getCharactersdetails = async id => {
+export const getCharactersdetail = async id => {
 	try {
-		return fetch(`https://www.swapi.tech/api/Charactersdetails/${id}`, {
+		return fetch(`https://www.swapi.tech/api/people/${id}`, {
 			method: "GET",
 			redirect: "follow"
 		})
@@ -22,7 +22,7 @@ export const getCharactersdetails = async id => {
 		return {};
 	}
 };
-export const getPlanets = async () => {
+export const getPlanet = async () => {
 	try {
 		return fetch("https://www.swapi.tech/api/planets?page=1&limit=100", {
 			method: "GET",
@@ -34,7 +34,7 @@ export const getPlanets = async () => {
 		return [];
 	}
 };
-export const getPlanetsdetails = async id => {
+export const getPlanetsdetail = async id => {
 	try {
 		return fetch(`https://www.swapi.tech/api/planets/${id}`, {
 			method: "GET",

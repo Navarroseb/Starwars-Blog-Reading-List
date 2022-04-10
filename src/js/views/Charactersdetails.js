@@ -1,10 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import Charactersimg from "../../img/Charactersimg.jpg";
 import "../../styles/Charactersdetails.css";
+import { Context } from "../store/appContext";
 
 
 export const Charactersdetails = () => {
+	const { store, actions } = useContext(Context);
+	const params = useParams();
+	useEffect(() => {actions.getCharactersdetails(params.id);}, []);
+	if (store.charactersdetails){
 		return (
 			<div className="container contenedor">
 				<div className="card m-2 bg-dark" style={{ width: "30rem" }}>
@@ -13,43 +18,29 @@ export const Charactersdetails = () => {
 						className="card-img-top"
 					/>
 					<div className="card-body">
-						<h1 className="card-title"></h1>{" "}
+						<h1 className="card-title">{store.charactersdetails.properties.name}</h1>{" "}
 						<p>
-							<strong>description:</strong>
+							<strong>Birth Year:</strong> {store.charactersdetails.properties.birth_year}
 						</p>
 						<p>
-							<strong>birth_year:</strong>
+							<strong>Height:</strong> {store.charactersdetails.properties.height}
 						</p>
 						<p>
-							<strong>height:</strong> 
+							<strong>Mass:</strong> {store.charactersdetails.properties.mass}
 						</p>
 						<p>
-							<strong>mass:</strong>
+							<strong>Hair Color:</strong> {store.charactersdetails.properties.hair_color}
 						</p>
 						<p>
-							<strong>hair_color:</strong>
+							<strong>Skin Color:</strong> {store.charactersdetails.properties.skin_color} 
 						</p>
 						<p>
-							<strong>skin_color:</strong>
+							<strong>Eyes Color:</strong> {store.charactersdetails.properties.eye_color}
 						</p>
 						<p>
-							<strong>eye_color:</strong>
+							<strong>Gender:</strong> {store.charactersdetails.properties.gender}
 						</p>
-						<p>
-							<strong>gender:</strong>
-						</p>
-						<p>
-							<strong>created:</strong>
-						</p>
-						<p>
-							<strong>edited:</strong>
-						</p>
-						<p>
-							<strong>homeworld:</strong>
-						</p>
-						<p>
-							<strong>url:</strong>
-						</p>
+						
 						<div className="boton">
 							<Link className="btn btn-dark boton" to={"/Characters"}>
 								Back
@@ -59,4 +50,7 @@ export const Charactersdetails = () => {
 				</div>
 			</div>
 		);
+	} else {
+		return <div>Cargando datos...</div>;
+	}
 	};
