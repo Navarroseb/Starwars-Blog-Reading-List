@@ -6,7 +6,7 @@ const getState = ({ getStore, setStore }) => {
 			charactersdetails: undefined,
 			planets: [],
 			planetsdetails: undefined,
-			favoritos: []
+			favorites: []
 		},
 		actions: {
 			getCharacters: () => {
@@ -46,15 +46,15 @@ const getState = ({ getStore, setStore }) => {
 					});
 			},
 			
-			addfavoritos: dato => {
+			addfavorites: dato => {
 				const store = getStore();
-				setStore({ favoritos: [...store.favoritos, dato] });
-				console.log(store.favoritos);
+				setStore({ favorites: [...store.favorites, dato] });
+				console.log(store.favorites);
 			},
-			deletefavoritos: index => {
+			deletefavorites: index => {
 				const store = getStore();
-				store.favoritos.splice(index, 1);
-				setStore({ favoritos: [...store.favoritos] });
+				store.favorites.splice(index, 1);
+				setStore({ favorites: [...store.favorites] });
 			}
 		}
 	};

@@ -24,7 +24,7 @@ export const Characters = () => {
                                     <Link className="btn btn-border border-primary ms-2" to={"charactersdetails/" + value.uid}>
                                         Learn More!
                                     </Link>
-                                    <button type="button" className="btn btn-border border-warning ms-2" onClick={() => actions.addFavoritos(value.name)}>
+                                    <button type="button" className="btn btn-border border-warning ms-2" onClick={() => actions.addfavorites(value.name)}>
                                     <i className="far fa-heart"></i>
                                     </button>                             
                                 </div>

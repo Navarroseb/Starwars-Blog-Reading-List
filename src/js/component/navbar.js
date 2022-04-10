@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Badge, Dropdown } from "react-bootstrap";
 import starwarslogo from "../../img/starwarslogo.png";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
 	return (
 		<nav className="navbar navbar-expand-lg bg-light">
 			<div className="container-fluid">
@@ -27,30 +30,17 @@ export const Navbar = () => {
 							</Link>
 						</li>
 					</ul>
-
-
-					{/* <Dropdown className="ms-3">
-						<Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
-							Favoritos <Badge bg="danger">{store.favoritos.length}</Badge>
-						</Dropdown.Toggle>
-
-						<Dropdown.Menu variant="dark">
-							{store.favoritos.map((value, key) => (
-								<Dropdown.Item key={key} href="#/action-4">
-									{value}{" "}
-									<i onClick={() => actions.deletefavoritos(key)} className="fas fa-trash-alt" />
-								</Dropdown.Item>
-							))}
-						</Dropdown.Menu>
-					</Dropdown> */} 
 					<div className="dropdown">
-					<a className="nav-link dropdown-toggle bg-primary text-white bg-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
-						Favorites
-					</a>
-					<ul className="dropdown-menu text-secondary" aria-labelledby="navbarDropdown">
-						<li><a className="dropdown-item" href="#">Favorites</a></li>
-					</ul>
-				</div> 
+						<a className="nav-link dropdown-toggle text-secondary bg-transparent" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+							Favorites <Badge bg="transparent">{store.favorites.length}</Badge>
+						</a>
+						<ul className="dropdown-menu text-secondary" aria-labelledby="navbarDropdown">
+							{store.favorites.map((value, key) => (
+								<li><a key={key} className="dropdown-item" href="#/action-4">{value}{" "}
+								<i onClick={() => actions.deletefavorites(key)} className="fas fa-trash-alt" /></a></li>
+							))}
+						</ul>
+					</div>  
 				</div>
 			</div>
 		</nav>
