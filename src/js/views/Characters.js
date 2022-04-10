@@ -21,10 +21,10 @@ export const Characters = () => {
                             <div className="card-body">
                                 <p className="text-card">Name: {value.name}</p>
                                 <div className="cardbuttons">
-                                    <Link className="btn btn-border border-primary ms-2" to={"charactersdetails/" + value.uid}>
+                                    <Link className="btn btn-border border-danger ms-2" to={"charactersdetails/" + value.uid}>
                                         Learn More!
                                     </Link>
-                                    <button type="button" className="btn btn-border border-warning ms-2" onClick={() => actions.addfavorites(value.name)}>
+                                    <button type="button" className="btn btn-border border-danger ms-2" onClick={() => actions.addfavorites(value.name)}>
                                     <i className="far fa-heart"></i>
                                     </button>                             
                                 </div>

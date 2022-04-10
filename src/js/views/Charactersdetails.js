@@ -42,7 +42,7 @@ export const Charactersdetails = () => {
 						</p>
 						
 						<div className="boton">
-							<Link className="btn btn-dark boton" to={"/Characters"}>
+							<Link className="btn btn-dark bg-danger" to={"/Characters"}>
 								Back
 							</Link>
 						</div>

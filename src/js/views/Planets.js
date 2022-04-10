@@ -1,97 +1,39 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "../../styles/planets.css"
 import Planetsbg from "../../img/Planetsbg.jpg";
 import Planetimg from "../../img/Planetimg.jpg";
+import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 
-export const Planets = (props) => {
+
+export const Planets = () => {
+    const {store, actions} = useContext(Context);
+    useEffect(() => {
+        actions.getPlanets();
+    }, []);
+
     return (
-        <>
-            <img src={Planetsbg} className="card-img-top" alt="..." />
+        <div className="contenedor">
+            <img src={Planetsbg} className="card-img-top" alt="bg" />
             <div className="container">
-                <div className="row flex-row">
-                    <div className="card m-2 g-4" style={{ width: "20rem", height: "30rem" }}>
-                        <img src={Planetimg} className="card-img-top" alt="..." />
-                        <div className="card-body">
-                            <h5 className={props}>
-                                Name:
-                            </h5>
-                            <p className={props}></p>
-                            <div className="botones-card">
-                                <a href="/Planetsdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
-                                <a href="/favoritos" className="btn btn-border border-warning ms-2"><i className="far fa-heart"></i></a>
+                {store.planets.map((value, i) => (
+                    <div key={i} className="card m-2 g-4 row flex-row" style={{ width: "20rem", height: "35rem" }}>
+                            <img src={Planetimg} className="card-img-top" alt="perfil" />
+                            <div className="card-body">
+                                <p className="text-card">Name: {value.name}</p>
+                                <div className="cardbuttons">
+                                    <Link className="btn btn-border border-danger ms-2" to={"planetsdetails/" + value.uid}>
+                                        Learn More!
+                                    </Link>
+                                    <button type="button" className="btn btn-border border-danger ms-2" onClick={() => actions.addfavorites(value.name)}>
+                                    <i className="far fa-heart"></i>
+                                    </button>                             
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="card m-2 g-4" style={{ width: "20rem", height: "30rem" }}>
-                        <img src={Planetimg} className="card-img-top" alt="..." />
-                        <div className="card-body">
-                            <h5 className={props}>
-                                Name:
-                            </h5>
-                            <p className={props}></p>
-                            <div className="botones-card">
-                                <a href="/Planetsdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
-                                <a href="/favoritos" className="btn btn-border border-warning ms-2"><i className="far fa-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card m-2 g-4" style={{ width: "20rem", height: "30rem" }}>
-                        <img src={Planetimg} className="card-img-top" alt="..." />
-                        <div className="card-body">
-                            <h5 className={props}>
-                                Name:
-                            </h5>
-                            <p className={props}></p>
-                            <div className="botones-card">
-                                <a href="/Planetsdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
-                                <a href="/favoritos" className="btn btn-border border-warning ms-2"><i className="far fa-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card m-2 g-4" style={{ width: "20rem", height: "30rem" }}>
-                        <img src={Planetimg} className="card-img-top" alt="..." />
-                        <div className="card-body">
-                            <h5 className={props}>
-                                Name:
-                            </h5>
-                            <p className={props}></p>
-                            <div className="botones-card">
-                                <a href="/Planetsdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
-                                <a href="/favoritos" className="btn btn-border border-warning ms-2"><i className="far fa-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card m-2 g-4" style={{ width: "20rem", height: "30rem" }}>
-                        <img src={Planetimg} className="card-img-top" alt="..." />
-                        <div className="card-body">
-                            <h5 className={props}>
-                                Name:
-                            </h5>
-                            <p className={props}></p>
-                            <div className="botones-card">
-                                <a href="/Planetsdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
-                                <a href="/favoritos" className="btn btn-border border-warning ms-2"><i className="far fa-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card m-2 g-4" style={{ width: "20rem", height: "30rem" }}>
-                        <img src={Planetimg} className="card-img-top" alt="..." />
-                        <div className="card-body">
-                            <h5 className={props}>
-                                Name:
-                            </h5>
-                            <p className={props}></p>
-                            <div className="botones-card">
-                                <a href="/Planetsdetails" className="btn btn-border border-primary ms-2">Learn More!</a>
-                                <a href="/favoritos" className="btn btn-border border-warning ms-2"><i className="far fa-heart"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
+                    ))}
             </div>
-        </>
+        </div>
     )
 }
