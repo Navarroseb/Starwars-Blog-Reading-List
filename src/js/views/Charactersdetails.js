@@ -18,7 +18,7 @@ export const Charactersdetails = () => {
 						className="card-img-top"
 					/>
 					<div className="card-body">
-						<h1 className="card-title">{store.charactersdetails.properties.name}</h1>{" "}
+						<h1 className="card-title text-danger">{store.charactersdetails.properties.name}</h1>{" "}
 						<p>
 							<strong>Birth Year:</strong> {store.charactersdetails.properties.birth_year}
 						</p>

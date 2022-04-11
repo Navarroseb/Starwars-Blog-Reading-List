@@ -17,7 +17,7 @@ export const Planetsdetails = () => {
 			<div className="card m-2 bg-dark" style={{ width: "30rem" }}>
 				<img src={Planetimg} className="card-img-top"/>
 				<div className="card-body">
-					<h1 className="card-title">{store.planetsdetails.properties.name}</h1>{" "}
+					<h1 className="card-title text-danger">{store.planetsdetails.properties.name}</h1>{" "}
 					<p>
 						<strong>Diametro:</strong> {store.planetsdetails.properties.diameter}
 					</p>
