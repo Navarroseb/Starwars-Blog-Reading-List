@@ -5,8 +5,9 @@
   }
 
   a {
-    color: grey;
+    color:black;
     font-size: 1.2rem;
+    text-decoration: none;
   }
   
   .slogan {
