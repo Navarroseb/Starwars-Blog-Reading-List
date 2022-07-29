@@ -14,11 +14,11 @@ import injectContext from "./store/appContext";
 
 
 const Layout = () => {
-	const basename = process.env.BASENAME || "";
+	
 
 	return (
 		<>
-			<BrowserRouter basename={basename}>
+			<BrowserRouter >
 				<Navbar />
 					<Switch>
 						<Route exact path="/">
